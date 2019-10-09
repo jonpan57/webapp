@@ -1,19 +1,20 @@
 <template>
   <div class="index">
-    <myHeader/>
-    <tabs/>
+    <Header/>
+    <Tabs/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import myHeader from '@/components/header/index'
-import tabs from '@/components/tabs/index'
+import Header from '@/components/header/index'
+import Tabs from '@/components/tabs/index'
 
 export default {
   name: 'index',
   components: {
-    myHeader,
-    tabs
+    Header,
+    Tabs
   }
 }
 </script>
