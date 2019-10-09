@@ -7,6 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: 'goods',
       name: 'index',
       component: () => import('@/components/index'),
       children: [

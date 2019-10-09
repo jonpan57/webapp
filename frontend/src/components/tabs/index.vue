@@ -17,7 +17,14 @@ export default {}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-.tabs
-  display :flex
-  width :
+  .tabs
+    display: flex
+    width: 100%
+    height: 40px
+    line-height: 40px
+    .tab-item
+      flex: 1
+      text-align: center
+      & > a
+        display: block
 </style>
