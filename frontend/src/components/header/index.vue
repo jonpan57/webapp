@@ -11,7 +11,11 @@
         </div>
       </div>
       <div class="description">
-        {{seller.description}}
+        {{seller.description}}/{{seller.deliveryTime}}分钟送达
+      </div>
+      <div v-if="seller.supports" class="support">
+        <span class="icon"></span>
+        <span class="text">{{seller.supports[0].description}}</span>
       </div>
     </div>
     <div class="bulletin-wrapper"></div>
@@ -35,6 +39,33 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus" scoped>
+  @import "~common/stylus/mixin"
+  .header
+    color: #fff
+    background: #000
+    .content-wrapper
+      padding: 24px 12px 18px 24px
+      font-size: 0
+      .avatar
+        display: inline-block
+      .content
+        display: inline-block
+        margin-left: 14px
+        font-size 14px
+        .title
+          margin: 2px 0 8px 0
+          .brand
+            display: inline-block
+            vertical-align: top
+            width: 30px
+            height: 18px
+            bg-image('brand')
+            background-size: 30px 18px
+            background-repeat: no-repeat
+          .name
+            margin-left: 6px
+            font-size: 16px
+            line-height: 18px
+            font-weight: bold
 </style>
