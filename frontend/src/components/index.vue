@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Header from '@/components/header/index'
-import Tabs from '@/components/tabs/index'
+import Header from 'components/header/index'
+import Tabs from 'components/tabs/index'
 
 export default {
   name: 'index',

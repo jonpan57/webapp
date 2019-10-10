@@ -11,20 +11,10 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
 //后台数据模拟
-// const express = require('express')
-// const app = express()//请求server
-// var appData = require('../data.json')//加载本地数据文件
-// var seller = appData.seller//获取对应本地数据
-// var goods = appData.goods
-// var ratings = appData.ratings
-// var apiRouter = express.Router()
-// apiRouter.get('/seller', function (req, res) {
-//   res.json({
-//     errno: 0,
-//     data: seller
-//   })
-// })
-// app.use('/api', apiRouter);//通过路由请求数据
+var appData = require('../data.json')//加载本地数据文件
+var seller = appData.seller//获取对应本地数据
+var goods = appData.goods
+var ratings = appData.ratings
 //后台数据模拟
 
 const HOST = process.env.HOST
@@ -59,7 +49,32 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+    //后台数据模拟
+    before(app) {
+      app.get('/api/seller', (req, res) => {
+          res.json({
+            errno: 0,
+            data: seller
+          })
+        }
+      )
+      app.get('/api/goods', (req, res) => {
+          res.json({
+            errno: 0,
+            data: goods
+          })
+        }
+      )
+      app.get('/api/ratings', (req, res) => {
+          res.json({
+            errno: 0,
+            data: ratings
+          })
+        }
+      )
     }
+    //后台数据模拟
   },
   plugins: [
     new webpack.DefinePlugin({

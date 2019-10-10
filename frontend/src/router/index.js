@@ -4,27 +4,29 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: 'active',
+  mode: 'history',
   routes: [
     {
       path: '/',
-      redirect: 'goods',
+      // redirect: 'goods',
       name: 'index',
-      component: () => import('@/components/index'),
+      component: () => import('components/index'),
       children: [
         {
           path: 'goods',
           name: 'goods',
-          component: () => import('@/components/goods/index')
+          component: () => import('components/goods/index')
         },
         {
           path: 'ratings',
           name: 'ratings',
-          component: () => import('@/components/ratings/index')
+          component: () => import('components/ratings/index')
         },
         {
           path: 'seller',
           name: 'seller',
-          component: () => import('@/components/seller/index')
+          component: () => import('components/seller/index')
         }
       ]
 

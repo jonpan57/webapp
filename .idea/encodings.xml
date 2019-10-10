@@ -2,12 +2,21 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/frontend/build/webpack.base.conf.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/config/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/api/helper.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/api/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/common/stylus/base.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/common/stylus/icon.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/common/stylus/index.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/common/stylus/mixin.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/goods/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/components/header/index.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/index.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/ratings/index.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/seller/index.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/components/tabs/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/router/index.js" charset="UTF-8" />
   </component>
 </project>
