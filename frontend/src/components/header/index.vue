@@ -49,10 +49,12 @@ export default {
       font-size: 0
       .avatar
         display: inline-block
+        vertical-align: top
+        img
+          border-radius: 2px
       .content
         display: inline-block
-        margin-left: 14px
-        font-size 14px
+        margin-left: 16px
         .title
           margin: 2px 0 8px 0
           .brand
@@ -68,4 +70,26 @@ export default {
             font-size: 16px
             line-height: 18px
             font-weight: bold
+        .description
+          margin-bottom: 10px
+          line-height: 12px
+          font-size: 12px
+        .support
+          .icon
+            display: inline-block
+            width: 12px
+            height: 12px
+            margin-right 4px
+            background-size: 12px 12px
+            background-repeat: no-repeat
+            &.decrase
+              bg-image('decrease_1')
+            &.discount
+              bg-image('discount_1')
+            &.guarantee
+              bg-image('guarantee_1')
+            &.invoice
+              bg-image('invoice_1')
+            &.special
+              bg-image('special_1')
 </style>
