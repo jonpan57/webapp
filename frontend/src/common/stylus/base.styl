@@ -10,7 +10,18 @@
       -webkit-transform: scaleY(0.5)
       transform: scaleY(0.5)
 
-body,html
+body, html
   line-height: 1
   font-weight: 200
-  font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑"
+  font-family: "SIMHEI", "MSYH", "黑体", "微软雅黑"
+
+  .clearfix
+    display: inline-block
+
+    &:after
+      display: block
+      content: "."
+      height: 0
+      line-height: 0
+      clear: both
+      visibility: hidden
