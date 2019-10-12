@@ -211,5 +211,4 @@ export default {
       background: rgba(7, 17, 27, 0.8)
       .detail-wrapper
         min-height:100px
-        .detail-main
 </style>
