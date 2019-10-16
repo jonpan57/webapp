@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -18,6 +18,11 @@ const createLintingRule = () => ({
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
+
+// Cube-ui
+var PostCompilePlugin = require('webpack-post-compile-plugin')
+var TransformModulesPlugin = require('webpack-transform-modules-plugin')
+// Cube-ui
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -37,9 +42,9 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       //add 项目目录路径
-      'common':resolve('src/common'),
-      'components':resolve('src/components'),
-      'api':resolve('src/api'),
+      'common': resolve('src/common'),
+      'components': resolve('src/components'),
+      'api': resolve('src/api'),
     }
   },
   module: {
@@ -92,5 +97,11 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  // Cube-ui
+  plugins: [
+    new PostCompilePlugin(),
+    new TransformModulesPlugin()
+  ]
+  // Cube-ui
 }

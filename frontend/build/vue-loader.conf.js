@@ -7,10 +7,17 @@ const sourceMapEnabled = isProduction
   : config.dev.cssSourceMap
 
 module.exports = {
+  // loaders: utils.cssLoaders({
+  //   sourceMap: sourceMapEnabled,
+  //   extract: isProduction
+  // }),
+
+  // Cube-ui
   loaders: utils.cssLoaders({
     sourceMap: sourceMapEnabled,
-    extract: isProduction
+    extract: false
   }),
+  // Cube-ui
   cssSourceMap: sourceMapEnabled,
   cacheBusting: config.dev.cacheBusting,
   transformToRequire: {
