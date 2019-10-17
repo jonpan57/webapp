@@ -1,7 +1,7 @@
 <template>
-  <div class="tbs">
+  <div class="tabs">
     <cube-tab-bar
-      show-slider
+      :show-slider=false
       v-model="selectedLabel"
       :data="tabs"
       ref="tabBar"
@@ -55,9 +55,9 @@ export default {
       get () {
         return this.tabs[this.index].label
       },
-      set (newVal) {
+      set (val) {
         this.index = this.tabs.findIndex((value) => {
-          return value.label === newVal
+          return value.label === val
         })
       }
     }
@@ -72,5 +72,14 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/mixin.styl"
+  .tabs
+    >>> .cube-tab
+      padding: 10px 0
+    display: flex
+    flex-direction: column
+    height: 100%
 
+    .slide-wrapper
+      flex: 1
+      overflow: hidden
 </style>
