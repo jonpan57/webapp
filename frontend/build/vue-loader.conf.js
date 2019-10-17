@@ -17,7 +17,7 @@ module.exports = {
     sourceMap: sourceMapEnabled,
     extract: false
   }),
-  // Cube-ui
+
   cssSourceMap: sourceMapEnabled,
   cacheBusting: config.dev.cacheBusting,
   transformToRequire: {

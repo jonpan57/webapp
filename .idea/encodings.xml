@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/frontend/build/webpack.base.conf.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/config/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/frontend/src/App.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/api/helper.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/api/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/frontend/src/common/stylus/base.styl" charset="UTF-8" />

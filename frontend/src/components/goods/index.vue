@@ -1,40 +1,41 @@
 <template>
-  <div class="goods">
-    <div class="menu-wrapper">
-      <ul>
-        <li v-for="item in goods" class="menu-item" :key="item">
-          <span class="text border-1px">
-            <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
-          </span>
-        </li>
-      </ul>
-    </div>
-    <div class="foods-wrapper">
-      <ul>
-        <li v-for="item in goods" class="food-list" :key="item">
-          <h1 class="title">{{item.name}}</h1>
-          <ul>
-            <li v-for="food in item.foods" class="food-item" :key="food">
-              <div class="icon">
-                <img width="57" height="57" :src="food.icon">
-              </div>
-              <div class="content">
-                <h2 class="name">{{food.name}}</h2>
-                <p class="desc">{{food.description}}</p>
-                <div class="extra">
-                  <span>月售{{food.sellerCount}}份</span>
-                  <span>好评率{{food.rating}}%</span>
-                </div>
-                <div class="price">
-                  <span class="now">￥{{food.price}}</span>
-                  <span v-show="food.oldPrice" class="old">￥{{food.oldPrice}}</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+  <div class="home">
+    I am goods!!!
+<!--    <div class="menu-wrapper">-->
+<!--      <ul>-->
+<!--        <li v-for="item in goods" class="menu-item" :key="item">-->
+<!--          <span class="text border-1px">-->
+<!--            <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>{{item.name}}-->
+<!--          </span>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--    <div class="foods-wrapper">-->
+<!--      <ul>-->
+<!--        <li v-for="item in goods" class="food-list" :key="item">-->
+<!--          <h1 class="title">{{item.name}}</h1>-->
+<!--          <ul>-->
+<!--            <li v-for="food in item.foods" class="food-item" :key="food">-->
+<!--              <div class="icon">-->
+<!--                <img width="57" height="57" :src="food.icon">-->
+<!--              </div>-->
+<!--              <div class="content">-->
+<!--                <h2 class="name">{{food.name}}</h2>-->
+<!--                <p class="desc">{{food.description}}</p>-->
+<!--                <div class="extra">-->
+<!--                  <span>月售{{food.sellerCount}}份</span>-->
+<!--                  <span>好评率{{food.rating}}%</span>-->
+<!--                </div>-->
+<!--                <div class="price">-->
+<!--                  <span class="now">￥{{food.price}}</span>-->
+<!--                  <span v-show="food.oldPrice" class="old">￥{{food.oldPrice}}</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -42,6 +43,7 @@
 import {getGoods} from 'api'
 
 export default {
+  name: 'index',
   data () {
     return {
       goods: {

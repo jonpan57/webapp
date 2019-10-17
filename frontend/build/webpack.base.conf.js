@@ -3,6 +3,9 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+// Cube-ui
+var PostCompilePlugin = require('webpack-post-compile-plugin')
+var TransformModulesPlugin = require('webpack-transform-modules-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -18,11 +21,6 @@ const createLintingRule = () => ({
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
-
-// Cube-ui
-var PostCompilePlugin = require('webpack-post-compile-plugin')
-var TransformModulesPlugin = require('webpack-transform-modules-plugin')
-// Cube-ui
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
@@ -100,8 +98,8 @@ module.exports = {
   },
   // Cube-ui
   plugins: [
+    // ...
     new PostCompilePlugin(),
     new TransformModulesPlugin()
   ]
-  // Cube-ui
 }

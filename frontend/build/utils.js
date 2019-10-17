@@ -33,7 +33,6 @@ exports.cssLoaders = function (options) {
   const stylusOptions = {
     'resolve url': true
   }
-  // Cube-ui
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
@@ -60,8 +59,8 @@ exports.cssLoaders = function (options) {
     }
   }
 
-   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
-  return {
+  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
+    return {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
