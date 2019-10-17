@@ -13,7 +13,8 @@
         :autoPlay=false
         :showDots=false
         :initialIndex="index"
-        ref="slide">
+        ref="slide"
+        @change="onChange">
         <cube-slide-item>
           <Goods></Goods>
         </cube-slide-item>
@@ -50,14 +51,19 @@ export default {
       ]
     }
   },
+  methods: {
+    onChange (current) {
+      this.index = current
+    }
+  },
   computed: {
     selectedLabel: {
       get () {
         return this.tabs[this.index].label
       },
-      set (val) {
+      set (newVal) {
         this.index = this.tabs.findIndex((value) => {
-          return value.label === val
+          return value.label === newVal
         })
       }
     }

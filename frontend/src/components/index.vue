@@ -1,7 +1,7 @@
 <template>
   <div class="index">
-    <Header/>
-    <Tabs/>
+    <Header></Header>
+    <Tabs class="tab-wrapper"></Tabs>
     <router-view/>
   </div>
 </template>
@@ -19,6 +19,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus" scoped>
+.tab-wrapper
+  position :fixed
+  top:136px
+  left:0
+  right:0
+  bottom:0
 </style>
