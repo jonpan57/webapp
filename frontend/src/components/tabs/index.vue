@@ -1,7 +1,7 @@
 <template>
   <div class="tabs">
     <cube-tab-bar
-      :show-slider=false
+      :show-slider=true
       v-model="selectedLabel"
       :data="tabs"
       ref="tabBar"
@@ -14,7 +14,9 @@
         :showDots=false
         :initialIndex="index"
         ref="slide"
-        @change="onChange">
+        @change="onChange"
+        @scroll="onScroll"
+      :options="slideOptions">
         <cube-slide-item>
           <Goods></Goods>
         </cube-slide-item>
@@ -48,12 +50,19 @@ export default {
         {
           label: '商家'
         }
-      ]
+      ],
+      slideOptions: {
+        listenScroll: true,
+        probeType: 3,
+        directionLockThreshold: 0
+      }
     }
   },
   methods: {
     onChange (current) {
       this.index = current
+    },
+    onScroll (pos) {
     }
   },
   computed: {
