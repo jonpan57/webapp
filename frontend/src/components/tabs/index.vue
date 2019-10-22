@@ -2,6 +2,7 @@
   <div class="tabs">
     <cube-tab-bar
       :show-slider=true
+      :useTransition=false
       v-model="selectedLabel"
       :data="tabs"
       ref="tabBar"
@@ -16,15 +17,9 @@
         ref="slide"
         @change="onChange"
         @scroll="onScroll"
-      :options="slideOptions">
-        <cube-slide-item>
-          <Goods></Goods>
-        </cube-slide-item>
-        <cube-slide-item>
-          <Ratings></Ratings>
-        </cube-slide-item>
-        <cube-slide-item>
-          <Seller></Seller>
+        :options="slideOptions">
+        <cube-slide-item v-for="(tab,index) in tabs" :key="index">
+          <components :is="tab.component" :data="tab.data"></components>
         </cube-slide-item>
       </cube-slide>
     </div>
@@ -32,25 +27,22 @@
 </template>
 
 <script>
-import Goods from 'components/goods/index'
-import Ratings from 'components/ratings/index'
-import Seller from 'components/seller/index'
-
 export default {
+  props: {
+    tabs: {
+      type: Array,
+      default () {
+        return {}
+      }
+    },
+    initialIndex: {
+      type: Number,
+      default: 0
+    }
+  },
   data () {
     return {
-      index: 0,
-      tabs: [
-        {
-          label: '商品'
-        },
-        {
-          label: '评价'
-        },
-        {
-          label: '商家'
-        }
-      ],
+      index: this.initialIndex,
       slideOptions: {
         listenScroll: true,
         probeType: 3,
@@ -63,6 +55,10 @@ export default {
       this.index = current
     },
     onScroll (pos) {
+      const tabBarWidth = this.$refs.tabBar.$el.clientWidth
+      const slideWidth = this.$refs.slide.slide.scrollerWidth
+      const transform = -pos.x / slideWidth * tabBarWidth
+      this.$refs.tabBar.setSliderTransform(transform)
     }
   },
   computed: {
@@ -76,11 +72,6 @@ export default {
         })
       }
     }
-  },
-  components: {
-    Goods,
-    Ratings,
-    Seller
   }
 }
 </script>
@@ -92,6 +83,7 @@ export default {
       padding: 10px 0
     display: flex
     flex-direction: column
+    width:100%
     height: 100%
 
     .slide-wrapper
