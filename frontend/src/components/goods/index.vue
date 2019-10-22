@@ -35,11 +35,13 @@
         </li>
       </ul>
     </div>
+    <Cart></Cart>
   </div>
 </template>
 
 <script>
 import {getGoods} from 'api'
+import Cart from 'components/cart/index'
 
 export default {
   name: 'index',
@@ -56,6 +58,9 @@ export default {
       this.goods = goods
     })
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+  },
+  components: {
+    Cart
   }
 }
 </script>
@@ -64,6 +69,9 @@ export default {
   @import "~common/stylus/mixin"
   .goods
     display: flex
+    position:absolute
+    top:0
+    bottom:48px
     width: 100%
     overflow: hidden
 
