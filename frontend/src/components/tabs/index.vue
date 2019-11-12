@@ -1,9 +1,9 @@
 <template>
   <div class="tabs">
     <cube-tab-bar
+      v-model="selectedLabel"
       :show-slider=true
       :useTransition=false
-      v-model="selectedLabel"
       :data="tabs"
       ref="tabBar"
       class="border-bottom-1px">
@@ -79,14 +79,6 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/mixin.styl"
   .tabs
-    >>> .cube-tab
-      padding: 10px 0
-    display: flex
-    flex-direction: column
     width:100%
     height: 100%
-
-    .slide-wrapper
-      flex: 1
-      overflow: hidden
 </style>

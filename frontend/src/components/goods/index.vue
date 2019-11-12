@@ -69,10 +69,9 @@ export default {
   @import "~common/stylus/mixin"
   .goods
     display: flex
-    position:absolute
     top:0
     bottom:48px
-    width: 100%
+    width:100%
     overflow: hidden
 
     .menu-wrapper
