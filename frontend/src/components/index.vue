@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="homepage">
     <div class="header-wrapper">
       <Header></Header>
     </div>
@@ -14,7 +14,6 @@ import Header from 'components/header/index'
 import Tabs from 'components/tabs/index'
 
 export default {
-  name: 'index',
   data () {
     return {
       seller: {}
@@ -55,10 +54,15 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .header-wrapper
+    position: relative
+    overflow: hidden
+
   .tab-wrapper
     position: fixed
     top: 136px
     left: 0
     right: 0
     bottom: 0
+
 </style>

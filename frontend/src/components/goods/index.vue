@@ -35,12 +35,15 @@
         </li>
       </ul>
     </div>
-    <Cart></Cart>
+    <div class="cart-wrapper">
+      <Cart :delivery_price="seller.deliveryPrice" :min_price="seller.minPrice"></Cart>
+    </div>
   </div>
 </template>
 
 <script>
-import {getGoods} from 'api'
+import {getGoods, getSeller} from 'api'
+
 import Cart from 'components/cart/index'
 
 export default {
@@ -50,12 +53,18 @@ export default {
       goods: {
         type: Object
       },
-      classMap: []
+      classMap: [],
+      seller: {
+        type: Object
+      }
     }
   },
   created () {
     getGoods().then((goods) => {
       this.goods = goods
+    })
+    getSeller().then((seller) => {
+      this.seller = seller
     })
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
   },
@@ -69,9 +78,10 @@ export default {
   @import "~common/stylus/mixin"
   .goods
     display: flex
-    top:0
-    bottom:48px
-    width:100%
+    position: absolute
+    top: 0
+    bottom: 48px
+    width: 100%
     overflow: hidden
 
     .menu-wrapper
@@ -85,7 +95,8 @@ export default {
         width: 56px
         line-height: 14px
         padding: 0 12px
-        white-space:normal
+        white-space: normal
+
         .icon
           display: inline-block
           vertical-align: top
@@ -178,4 +189,13 @@ export default {
               text-decoration: line-through
               font-size: 10px
               color: rgb(147, 153, 159)
+
+    .cart-wrapper
+      position: fixed
+      left: 0
+      bottom: 0
+      z-index: 50
+      width: 100%
+      height: 48px
+      background: #000
 </style>
