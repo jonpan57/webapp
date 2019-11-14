@@ -1,16 +1,16 @@
 <template>
-  <div class="index">
-    <Header></Header>
-    <Tabs class="tab-wrapper" :tabs="tabs" :initialIndex="0"></Tabs>
-    <router-view/>
+  <div>
+    <div class="header-wrapper">
+      <Header></Header>
+    </div>
+    <div class="tab-wrapper">
+      <Tabs :tabs="tabs" :initialIndex="0"></Tabs>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from 'components/header/index'
-import Goods from 'components/goods/index'
-import Ratings from 'components/ratings/index'
-import Seller from 'components/seller/index'
 import Tabs from 'components/tabs/index'
 
 export default {
@@ -25,21 +25,21 @@ export default {
       return [
         {
           label: '商品',
-          component: Goods,
+          component: () => import('components/goods/index'),
           data: {
             seller: this.seller
           }
         },
         {
           label: '评价',
-          component: Ratings,
+          component: () => import('components/ratings/index'),
           data: {
             seller: this.seller
           }
         },
         {
           label: '商家',
-          component: Seller,
+          component: () => import('components/seller/index'),
           data: {
             seller: this.seller
           }
