@@ -79,9 +79,9 @@ export default {
   .goods
     display: flex
     position: absolute
-    top: 0
+    top:0
+    left:0
     bottom: 48px
-    width: 100%
     overflow: hidden
 
     .menu-wrapper
