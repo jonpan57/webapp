@@ -82,6 +82,7 @@ export default {
     top:0
     left:0
     bottom: 48px
+    width:auto
     overflow: hidden
 
     .menu-wrapper
@@ -195,7 +196,7 @@ export default {
       left: 0
       bottom: 0
       z-index: 50
-      width: 100%
       height: 48px
+      width:100%
       background: #000
 </style>
