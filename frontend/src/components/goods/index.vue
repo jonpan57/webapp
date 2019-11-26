@@ -1,13 +1,17 @@
 <template>
   <div class="goods">
     <div class="menu-wrapper">
-      <ul>
-        <li v-for="item in goods" class="menu-item" :key="item">
+      <cube-scroll-nav
+      :side=true
+      :current="current">
+        <ul>
+          <li v-for="item in goods" class="menu-item" :key="item">
           <span class="text border-1px">
             <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </cube-scroll-nav>
     </div>
     <div class="foods-wrapper">
       <ul>
@@ -56,12 +60,14 @@ export default {
       classMap: [],
       seller: {
         type: Object
-      }
+      },
+      current: null
     }
   },
   created () {
     getGoods().then((goods) => {
       this.goods = goods
+      this.current = goods[0].name
     })
     getSeller().then((seller) => {
       this.seller = seller
@@ -79,10 +85,9 @@ export default {
   .goods
     display: flex
     position: absolute
-    top:0
-    left:0
+    top: 0
     bottom: 48px
-    width:auto
+    width: 100%
     overflow: hidden
 
     .menu-wrapper
@@ -197,6 +202,6 @@ export default {
       bottom: 0
       z-index: 50
       height: 48px
-      width:100%
+      width: 100%
       background: #000
 </style>

@@ -79,11 +79,14 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/mixin.styl"
   .tabs
-    display :flex
-    flex-direction :column
-    height :100%
+    display: flex
+    flex-direction: column
+    height: 100%
 
     .slide-wrapper
-      flex:1
-      overflow :hidden
+      flex: 1
+      overflow: hidden
+
+      .cube-slide-item
+        position: relative
 </style>
