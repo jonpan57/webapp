@@ -2,8 +2,8 @@
   <div class="goods">
     <div class="menu-wrapper">
       <cube-scroll-nav
-      :side=true
-      :current="current">
+        :side=true
+        :current="current">
         <ul>
           <li v-for="item in goods" class="menu-item" :key="item">
           <span class="text border-1px">
@@ -14,30 +14,32 @@
       </cube-scroll-nav>
     </div>
     <div class="foods-wrapper">
-      <ul>
-        <li v-for="item in goods" class="food-list" :key="item">
-          <h1 class="title">{{item.name}}</h1>
-          <ul>
-            <li v-for="food in item.foods" class="food-item" :key="food">
-              <div class="icon">
-                <img width="57" height="57" :src="food.icon">
-              </div>
-              <div class="content">
-                <h2 class="name">{{food.name}}</h2>
-                <p class="desc">{{food.description}}</p>
-                <div class="extra">
-                  <span>月售{{food.sellerCount}}份</span>
-                  <span>好评率{{food.rating}}%</span>
+      <cube-scroll-nav-panel>
+        <ul>
+          <li v-for="item in goods" class="food-list" :key="item">
+            <h1 class="title">{{item.name}}</h1>
+            <ul>
+              <li v-for="food in item.foods" class="food-item" :key="food">
+                <div class="icon">
+                  <img width="57" height="57" :src="food.icon">
                 </div>
-                <div class="price">
-                  <span class="now">￥{{food.price}}</span>
-                  <span v-show="food.oldPrice" class="old">￥{{food.oldPrice}}</span>
+                <div class="content">
+                  <h2 class="name">{{food.name}}</h2>
+                  <p class="desc">{{food.description}}</p>
+                  <div class="extra">
+                    <span>月售{{food.sellerCount}}份</span>
+                    <span>好评率{{food.rating}}%</span>
+                  </div>
+                  <div class="price">
+                    <span class="now">￥{{food.price}}</span>
+                    <span v-show="food.oldPrice" class="old">￥{{food.oldPrice}}</span>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </cube-scroll-nav-panel>
     </div>
     <div class="cart-wrapper">
       <Cart :delivery_price="seller.deliveryPrice" :min_price="seller.minPrice"></Cart>
